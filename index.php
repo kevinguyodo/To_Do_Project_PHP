@@ -11,5 +11,5 @@
 ?>
 
 <?php
-    require "./View/to-do-list.php"
+    require "./View/homepage.php"
 ?>

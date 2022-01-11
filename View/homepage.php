@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>TO-DO-LIST</h1>
+    <?= $content ?>
 </body>
 
 </html>
