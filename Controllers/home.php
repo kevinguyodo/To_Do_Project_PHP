@@ -1,10 +1,10 @@
 <?php
     ob_start();
 
+    function addition() {
+        echo 4+2;
+    }
 ?>
-
-<h2>Home</h2>
-<p>This is the homepage</p>
 
 <?php
     $content = ob_get_clean();

@@ -1,4 +1,4 @@
 <?php
-require "./home.php";
+require "../Controllers/home.php";
 require "./to-do-list.php";
 ?>

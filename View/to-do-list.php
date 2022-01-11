@@ -10,7 +10,10 @@
 
 <body>
     <h1>TO-DO-LIST</h1>
-    <?= $content ?>
+    <!-- La variable content sera le contenu qui sera apporté à la page -->
+    <?= $content?>
+    <!-- Appelle de fonction pour test -->
+    <?= test()?>
 </body>
 
 </html>
