@@ -5,7 +5,7 @@
     </head>
     <body>
  
-            <form action="Checkin.php" method="POST">
+            <form action='../Controllers/Checkin.php' method="POST">
                 <h1>Connexion</h1>
                 
                 <label><b>Nom d'utilisateur</b></label>

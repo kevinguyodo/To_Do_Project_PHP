@@ -12,7 +12,7 @@
                 if($_SESSION['user'] !== ""){
                     $user = $_SESSION['user'];
                    
-                    echo "Bonjour $user, vous êtes connecté";
+                    echo "Ravi de vous voir $user";
                 }
             ?>
             
