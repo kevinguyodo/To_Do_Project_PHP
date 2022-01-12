@@ -8,8 +8,8 @@
     <h2 class="desc">Que souhaitez-vous faire ?</h2>
 
     <div class="button">
-        <button class="login">Login</button>
-        <button class="register">Register</button>
+        <a href="/Controllers/login.php"><button class="login">Login</button></a>
+        <a href="/Controllers/register.php"><button class="register">Register</button></a>
     </div>
 </div>
 
@@ -29,7 +29,9 @@
     <p>Kévin GUYODO</p>
     <p>Yasser YOUSSOUF</p>
     <p>Enzo PINOT</p>
-    <a target="_blank" href="https://github.com/kevinguyodo/To_Do_Project_PHP"><button class="git">Accès au GITHUB</button></a>
+    <a target="_blank" href="https://github.com/kevinguyodo/To_Do_Project_PHP">
+        <button class="git">Accès au GITHUB</button>
+    </a>
 </div>
 
 <?php
