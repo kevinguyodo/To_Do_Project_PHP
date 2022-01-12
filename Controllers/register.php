@@ -19,7 +19,9 @@
         </div>
     </form>
 
-    <a class="desc" href="/Controllers/login.php">Sign in</a>
+    <div class="desc">
+        <a href="/Controllers/login.php"><button class="git">Or Sign in ?</button></a>
+    </div>
 
 </div>
 

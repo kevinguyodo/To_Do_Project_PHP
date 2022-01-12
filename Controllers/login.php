@@ -18,6 +18,9 @@
 
     </form>
 
+    <div class="desc">
+        <a href="/Controllers/register.php"><button class="git">Create Account ?</button></a>
+    </div>
 </div>
 
 <?php
