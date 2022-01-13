@@ -11,15 +11,10 @@
 
 <body>
     <div class="Welcome">
-        <h2>Bienvenue dans votre To do list</h2>
+        <h2>Bienvenue dans votre Projet</h2>
     </div>
     <div class="Project">
         <button>Numéro du projet</button>
-    </div>
-    <div class="add">
-        <a href="http://localhost:8000/View/project_to_do_list.php">
-            <input type="image" src="./IMG/plus_button.png" class="add_img" name="add_to_do">
-        </a>
     </div>
     <?=addToDoList()?>
     <!-- <button class="add"><img src="./IMG/plus_button.png"></button> -->
