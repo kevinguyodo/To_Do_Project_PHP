@@ -1,6 +1,10 @@
 <?php
 
-    if(isset($_POST['formlogin'])){
+function login(){
+
+    include '../Models/database.php';
+    global $db;
+
         extract($_POST);
 
         if(!empty($lmail) && !empty($lpassword)){ //condition qui vérifi si les champs sont tous remplis
@@ -27,5 +31,7 @@
         }else{
             echo "Veuillez compléter l'ensemble des champs";
         }
-    }
+
+}
+    
 ?>
