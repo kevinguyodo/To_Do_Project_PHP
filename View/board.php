@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./static/board.css">
     <title>Board</title>
 </head>
+
 <body>
     <header>
         <div class="overlay">
@@ -15,9 +17,10 @@
         </div>
     </header>
     <div class="add">
-        <a href="http://localhost:8000/View/project_to_do_list.php">
+        <a href="/View/project_to_do_list.php">
             <input type="image" src="./IMG/image_9.png" class="add_img" name="add_to_do">
         </a>
     </div>
 </body>
+
 </html>
