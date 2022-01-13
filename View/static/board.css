@@ -124,8 +124,12 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   align-content: stretch;
+  margin-right: 50px;
+  margin-top: 20px;
 }
 
 .add_img {
   filter: invert(100%);
+  height: 100px;
+  width: 100px;
 }

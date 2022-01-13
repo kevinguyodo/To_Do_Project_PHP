@@ -11,12 +11,12 @@
     <header>
         <div class="overlay">
             <h1 class="title">To-do-list</h1>
-            <h2 class="desc">Que souhaitez-vous faire ?</h2>
+            <h2 class="desc">Bienvenue dans votre board</h2>
         </div>
     </header>
     <div class="add">
         <a href="http://localhost:8000/View/project_to_do_list.php">
-            <input type="image" src="./IMG/plus_button.png" class="add_img" name="add_to_do">
+            <input type="image" src="./IMG/image_9.png" class="add_img" name="add_to_do">
         </a>
     </div>
 </body>
