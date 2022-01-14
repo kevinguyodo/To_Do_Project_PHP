@@ -21,6 +21,29 @@
             <input type="image" src="./IMG/image_9.png" class="add_img" name="add_to_do">
         </a>
     </div>
+    <div class="board">
+        <div class="wrapper">
+            <div class="box a">
+                <h3>Salut</h3>
+            </div>
+            <div class="box b">
+                <h3>Salut</h3>
+            </div>
+            <div class="box c">
+                <h3>Salut</h3>
+            </div>
+            <div class="box d">
+                <h3>Salut</h3>
+            </div>
+            <div class="box e">
+                <h3>Salut</h3>
+            </div>
+            <div class="box f">
+                <h3>Salut</h3>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
