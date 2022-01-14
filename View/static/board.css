@@ -21,7 +21,6 @@ body {
     margin-top: 3px;
     margin-right: 10px;
     margin-left: 10px;
-    z-index: 1;
 }
 
 .name_user {
@@ -33,7 +32,14 @@ body {
     background: none;
     color: #fff;
     font-size: 17px;
-    z-index: 5;
+}
+
+.logout:hover {
+    cursor: pointer;
+}
+
+.logout:active {
+    color: red;
 }
 
 header {
