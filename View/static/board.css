@@ -8,6 +8,34 @@ body {
     height: 900px;
 }
 
+.info_user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: stretch;
+}
+
+.icon {
+    margin-top: 3px;
+    margin-right: 10px;
+    margin-left: 10px;
+    z-index: 1;
+}
+
+.name_user {
+    margin-top: 10px;
+}
+
+.logout {
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 17px;
+    z-index: 5;
+}
+
 header {
     background: url("https://wallpaperaccess.com/full/1489353.jpg");
     text-align: center;
