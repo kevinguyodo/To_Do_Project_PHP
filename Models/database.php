@@ -1,12 +1,13 @@
 <?php
 
     try{
-        $db = new PDO('mysql:host=localhost:8889 ;dbname=database; charset=utf8', 'root', 'root' );
+        $db = new PDO('sqlite:../Models/BDD.db');
         $db ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
     }catch(PDOException $e){
-        echo $e;
+        echo "not connected";
 
     }
 ?>
+

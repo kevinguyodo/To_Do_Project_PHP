@@ -1,3 +1,13 @@
+<?php
+
+//Si le visiteur est connecté
+
+include '../Controllers/home_to_do_list_controllers.php';
+include '../View/database.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

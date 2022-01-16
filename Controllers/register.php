@@ -1,9 +1,11 @@
 <?php 
 
-function register(){
+include '../Models/database.php';
 
-    include '../Models/database.php';
+
+function register(){
     global $db;
+
 
         extract($_POST);
     
@@ -15,19 +17,24 @@ function register(){
                 ];
                 $hashpass =  password_hash($password, PASSWORD_BCRYPT, $options); // permet d'hasher le mdp
 
-                $c = $db->prepare("SELECT mail FROM Users WHERE mail = :mail"); //ici on analyse si le mail existe
-                $c->execute (['mail' => $mail]); //On exécute 
+                $c = $db->prepare("SELECT Mail FROM Users WHERE Mail = :Mail"); //ici on analyse si le mail existe
+                $c->execute (['Mail' => $mail]); //On exécute 
                 $result = $c-> rowCount(); //On créé une variable qui va repérer ou non si le mail existe déja
     
                 if($result == 0){ //on fait une condition, si quand l'utilisateur rempli le formulaire d'inscription et que le mail n'existe pas alors le compte est créé, sinon le compte a déja été créé
-                    $q = $db-> prepare("INSERT INTO Users(mail, password, username) VALUES (:mail, :password, :username) ");
+                    $q = $db-> prepare("INSERT INTO Users(Mail, PassWord, Username) VALUES (:Mail, :PassWord, :Username) ");
                     $q->execute([
-                        'mail' => $mail,
-                        'password' => $hashpass,
-                        'username' => $username
+                        'Mail' => $mail,
+                        'PassWord' => $hashpass,
+                        'Username' => $username
                     ]);
+
+                    header('Location: ../View/login.php');
+                    exit();
     
                     echo "Le compte a été créé";
+
+
     
                 }else{
                     echo "L'adresse mail entrée existe déja";

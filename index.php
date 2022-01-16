@@ -1,7 +1,3 @@
-<?php
-    ob_start();
-
-?>
 
 <div class="overlay">
     <h1 class="title">To-do-list</h1>

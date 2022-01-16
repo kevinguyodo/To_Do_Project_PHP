@@ -1,6 +1,5 @@
 <?php
-    include '../Models/database.php';
-    global $db;
+
     include '../Controllers/login.php';
 ?>
 
@@ -38,7 +37,7 @@
             </form>
 
             <div class="desc">
-                <a href="/Controllers/register.php"><button class="git">Create Account ?</button></a>
+                <a href="/View/register.php"><button class="git">Create Account ?</button></a>
             </div>
         </div>
     </header>
