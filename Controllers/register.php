@@ -22,10 +22,10 @@ function register(){
                 $result = $c-> rowCount(); //On créé une variable qui va repérer ou non si le mail existe déja
     
                 if($result == 0){ //on fait une condition, si quand l'utilisateur rempli le formulaire d'inscription et que le mail n'existe pas alors le compte est créé, sinon le compte a déja été créé
-                    $q = $db-> prepare("INSERT INTO Users(Mail, PassWord, Username) VALUES (:Mail, :PassWord, :Username) ");
+                    $q = $db-> prepare("INSERT INTO Users(Mail, Password, Username) VALUES (:Mail, :Password, :Username) ");
                     $q->execute([
                         'Mail' => $mail,
-                        'PassWord' => $hashpass,
+                        'Password' => $hashpass,
                         'Username' => $username
                     ]);
 

@@ -15,7 +15,7 @@ function login(){
             $result = $q->fetch(); //Permet de créer un tableau 
 
             if($result == true){ //condition qui permet de savoir si le mail existe déja
-                $hashpass = $result['PassWord']; //On verifi ici si le mdp hashé correspond au mdp en clair
+                $hashpass = $result['Password']; //On verifi ici si le mdp hashé correspond au mdp en clair
 
                 if(password_verify($lpassword, $hashpass)){ //condition qui permet de savoir si le mdp rentré par l'utilisateur est le bon ou non
                     echo "Le mot de passe est correcte, connexion en cours..";
