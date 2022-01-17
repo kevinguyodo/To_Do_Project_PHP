@@ -1,3 +1,6 @@
+<?php 
+    include "../Controllers/board.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +14,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="overlay">
             <div class="info_user">
@@ -19,7 +23,10 @@
                     <i class="fas fa-user fa-2x"></i>
                 </div>
                 <div class="icon">
-                    <button type="submit" class="logout"><i class="fas fa-sign-out-alt fa-2x"></i></button>
+                    <form method="post">
+                    <!-- Boutton déconnexion -->
+                        <button type="submit" class="logout" name="logout"><i class="fas fa-sign-out-alt fa-2x"></i></button>
+                    </form>
                 </div>
             </div>
             <h1 class="title">To-do-list</h1>
@@ -53,7 +60,7 @@
             </div>
         </div>
     </div>
-
+    <?= disconnect() ?>
 </body>
 
 </html>
