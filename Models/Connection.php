@@ -3,7 +3,7 @@ namespace App;
 use \PDO;
 /**
  * SQLite connnection
-//  */
+*/
 class Connection {
     /*
      * PDO instance
@@ -16,12 +16,10 @@ class Connection {
      * @return \PDO
      */
     public function connect() {
-
         if ($pdo == null) {
             $pdo = new PDO("sqlite:" . Config::PATH_TO_SQLITE_FILE);
+            return $pdo;
         }
-        return "Hello World";
-        // return $pdo;
     }
 
     function __construct() {}
