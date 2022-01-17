@@ -6,6 +6,7 @@
 
 <?php
     include "../Models/Connection.php";
+    use App\Connection;
     // $pdo = new Connection();
     $test = new Connection();
     echo $test->connect();
