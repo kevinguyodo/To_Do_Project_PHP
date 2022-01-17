@@ -1,6 +1,6 @@
 <?php
     ob_start();
-
+    require "./Controllers/board.php";
 ?>
 
 <div class="overlay">
@@ -11,6 +11,12 @@
         <a href="/Controllers/login.php"><button class="login">Login</button></a>
         <a href="/Controllers/register.php"><button class="register">Register</button></a>
     </div>
+    <div>
+        <form method="post">
+            <button name ="connect">Connexion</button>            
+        </form>
+    </div>
+    <?= connect() ?>
 </div>
 
 <?php
@@ -39,5 +45,5 @@
 ?>
 
 <?php
-    require "./View/homepage.php"
+    require "./View/homepage.php";
 ?>

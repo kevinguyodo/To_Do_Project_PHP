@@ -8,4 +8,11 @@
             die();
         } 
     }
+
+    function connect() {
+        if (isset($_POST['connect'])) {
+            session_start();
+            header("Location: ./View/board.php");
+        }
+    }
 ?> 
