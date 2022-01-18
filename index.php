@@ -1,12 +1,22 @@
+<?php
+    ob_start();
+    require "./Controllers/board.php";
+?>
 
 <div class="overlay">
     <h1 class="title">To-do-list</h1>
     <h2 class="desc">Que souhaitez-vous faire ?</h2>
 
     <div class="button">
-        <a href="/View/login.php"><button class="login">Login</button></a>
-        <a href="/View/register.php"><button class="register">Register</button></a>
+        <a href="/Controllers/login.php"><button class="login">Login</button></a>
+        <a href="/Controllers/register.php"><button class="register">Register</button></a>
     </div>
+    <div>
+        <form method="post">
+            <button name ="connect">Connexion</button>            
+        </form>
+    </div>
+    <?= connect() ?>
 </div>
 
 <?php
@@ -35,5 +45,5 @@
 ?>
 
 <?php
-    require "./View/homepage.php"
+    require "./View/homepage.php";
 ?>

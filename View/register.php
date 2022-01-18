@@ -1,7 +1,3 @@
-<?php
-    include '../Controllers/register.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,31 +15,24 @@
             <h1 class="title">To-do-list</h1>
             <h2 class="desc">Register</h2>
 
-            <?php if(isset($_POST['formsend'])){
-        register();
-    }
-    ?>
-
-
-            <form  method="post">
-                <input type = "username" name = "username" id = "username" placeholder="Votre nom d'utilisateur"><br/>
-                <input type = "mail" name ="mail" id ="mail" placeholder="Votre mail" ><br/>
-                <input type = "password" name ="password" id ="password" placeholder="Votre mot de passe" ><br/>
-                <input type = "password" name ="cpassword" id ="cpassword" placeholder="Confirmez votre mot de passe" ><br/>
-
-                <div class="info">
-
-                    <button type="submit" name = "formsend" id = "formsend" placeholder = "formsend" class="btn btn-primary btn-block btn-large">REGISTER</button>
-
+            <form method="post">
+                <div class="form">
+                    <input type="text" name="Username" placeholder="Username" required="required" />
+                    <input type="text" name="Mail" placeholder="Email" required="required" />
+                    <input type="password" name="Password" placeholder="Password" required="required" />
+                    <input type="password" name="ConfirmPassword" placeholder="Confirm password" required="required" />
                 </div>
-
+                <div class="info">
+                    <button type="submit" name="register" class="btn btn-primary btn-block btn-large">REGISTER</button>
+                </div>
             </form>
 
             <div class="desc">
-                <a href="/View/login.php"><button class="git">Or login ?</button></a>
+                <a href="/Controllers/login.php"><button class="git">Or Sign in ?</button></a>
             </div>
 
         </div>
+        <?=register()?>
     </header>
 </body>
 

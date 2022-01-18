@@ -1,7 +1,3 @@
-<?php
-
-    include '../Controllers/login.php';
-?>
 
 
 <!DOCTYPE html>
@@ -21,26 +17,24 @@
             <h1 class="title">To-do-list</h1>
             <h2 class="desc">Login</h2>
 
-            <?php if(isset($_POST['formlogin'])){
-                login();
-            }
-            ?>
-
-            <form  method="post">
-                    <input type = "lmail" name ="lmail" id ="lmail" placeholder="Votre mail" ><br/>
-                    <input type = "password" name ="lpassword" id ="lpassword" placeholder="Votre mot de passe" ><br/>
-
+            <form method="post">
+                <div class="form">
+                    <input type="text" name="lMail" placeholder="Username" required="required" />
+                    <input type="password" name="lPassword" placeholder="Password" required="required" />
+                </div>
                 <div class="info">
-                    <button type="submit" name ="formlogin" id = "formlogin" placeholder = "formlogin" class="btn btn-primary btn-block btn-large">LOGIN</button>
+                    <button type="submit" name="formlogin"class="btn btn-primary btn-block btn-large">LOGIN</button>
                 </div>
 
             </form>
 
             <div class="desc">
-                <a href="/View/register.php"><button class="git">Create Account ?</button></a>
+                <a href="/Controllers/register.php"><button class="git">Create Account ?</button></a>
             </div>
         </div>
+        <?=login()?>
     </header>
+
 </body>
 
 </html>
