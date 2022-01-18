@@ -40,6 +40,7 @@
                     echo "Le compte a été créé";
 
                     header("Location: ../Controllers/login.php");
+                    die();
     
                 }else{
                     echo "L'adresse mail entrée existe déja";
