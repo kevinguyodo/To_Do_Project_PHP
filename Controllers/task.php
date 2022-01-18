@@ -1,5 +1,6 @@
-<?php 
-    require "../View/board.php";
+<?php
+    require '../View/task.php';
+
     function disconnect() {
         // Récupère requête POST avec le nom du boutton
         if (isset($_POST['logout'])) {
@@ -7,12 +8,5 @@
             header("Location: ../index.php");
             die();
         } 
-    }
-
-    function connect() {
-        if (isset($_POST['connect'])) {
-            session_start();
-            header("Location: ./View/board.php");
-        }
     }
 ?>

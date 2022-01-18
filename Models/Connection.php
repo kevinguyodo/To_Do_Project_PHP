@@ -9,7 +9,7 @@ class Connection {
      * PDO instance
      * @var type 
      */
-    public $pdo = null;
+    public $pdo;
 
     /*
      * return in instance of the PDO object that connects to the SQLite database
