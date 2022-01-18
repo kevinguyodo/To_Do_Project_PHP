@@ -5,6 +5,8 @@
 
 <?php 
     use App\Connection;
+
+    $db;
     // require "../View/board.php";
     function disconnect() {
         // Récupère requête POST avec le nom du boutton
@@ -15,8 +17,11 @@
         } 
     }
 
+    // function getUsername() {
+    //     $db = (new Connection())->connect();
+    //     $username= $db->prepare("SELECT Username FROM Users WHERE User_Id = ");
+    // }
 
-    
     // function connect() {
     //     if (isset($_POST['connect'])) {
     //         session_start();
