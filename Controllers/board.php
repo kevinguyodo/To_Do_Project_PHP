@@ -17,15 +17,22 @@
         } 
     }
 
-    // function getUsername() {
-    //     $db = (new Connection())->connect();
-    //     $username= $db->prepare("SELECT Username FROM Users WHERE User_Id = ");
-    // }
+    function connect() {
+        if (isset($_POST['connect'])) {
+            session_start();
+            header("Location: ./View/board.php");
+        }
+    }
+?>
+<!-- // function getUsername() {
+// $db = (new Connection())->connect();
+// $username= $db->prepare("SELECT Username FROM Users WHERE User_Id = ");
+// }
 
-    // function connect() {
-    //     if (isset($_POST['connect'])) {
-    //         session_start();
-    //         header("Location: ./View/board.php");
-    //     }
-    // }
-?> 
+// function connect() {
+// if (isset($_POST['connect'])) {
+// session_start();
+// header("Location: ./View/board.php");
+// }
+// } -->
+<!-- ?> -->
