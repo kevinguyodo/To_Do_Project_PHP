@@ -18,7 +18,10 @@ class Connection {
     public function connect() {
         if ($pdo == null) {
             $pdo = new PDO("sqlite:" . Config::PATH_TO_SQLITE_FILE);
-            return $pdo;
+            // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
+        return $pdo;
     }
+
+    function __construct() {}
 }
