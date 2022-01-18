@@ -3,7 +3,7 @@
     require_once "../Models/Connection.php";
 ?>
 
-<?php 
+<?php    
     use App\Connection;
 
     $db;
@@ -20,10 +20,13 @@
     function connect() {
         if (isset($_POST['connect'])) {
             session_start();
-            header("Location: ./View/board.php");
+            header("Location: ./Controllers/board.php");
+            die();
         }
     }
 ?>
+
+
 <!-- // function getUsername() {
 // $db = (new Connection())->connect();
 // $username= $db->prepare("SELECT Username FROM Users WHERE User_Id = ");
