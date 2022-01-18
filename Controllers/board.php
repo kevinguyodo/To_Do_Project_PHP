@@ -24,7 +24,7 @@
         }
     }
 ?>
-// function getUsername() {
+<!-- // function getUsername() {
 // $db = (new Connection())->connect();
 // $username= $db->prepare("SELECT Username FROM Users WHERE User_Id = ");
 // }
@@ -34,5 +34,5 @@
 // session_start();
 // header("Location: ./View/board.php");
 // }
-// }
-?>
+// } -->
+<!-- ?> -->
