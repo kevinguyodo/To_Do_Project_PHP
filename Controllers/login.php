@@ -27,8 +27,9 @@
                 $hashpass = $result['PassWord']; //On verifi ici si le mdp hashé correspond au mdp en clair
 
                 if(password_verify($lPassword, $hashpass)){ //condition qui permet de savoir si le mdp rentré par l'utilisateur est le bon ou non
+                    creationSession($db, $lMail);
                     echo "Le mot de passe est correcte, connexion en cours..";
-                    header('Location: ../View/board.php');
+                    header('Location: ../Controllers/board.php');
                     die();
 
                 } else {
@@ -43,4 +44,16 @@
             echo "Veuillez compléter l'ensemble des champs";
         }        
     }  
+
+    function creationSession($db, $lMail) {
+        session_start();
+        $q = $db->prepare("SELECT User_Id, Username FROM Users WHERE Mail = :Mail");
+        $q->execute(['Mail' => $lMail]);
+        $result = $q->fetch();
+
+        $_SESSION['idUser'] = $result['User_Id'];
+        $_SESSION['Username'] = $result['Username'];
+    }
+
+
 ?>
