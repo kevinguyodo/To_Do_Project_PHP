@@ -1,4 +1,10 @@
 <?php 
+    require_once "../View/board.php";
+    require_once "../Models/Connection.php";
+?>
+
+<?php 
+    use App\Connection;
     // require "../View/board.php";
     function disconnect() {
         // Récupère requête POST avec le nom du boutton
@@ -9,10 +15,12 @@
         } 
     }
 
-    function connect() {
-        if (isset($_POST['connect'])) {
-            session_start();
-            header("Location: ./View/board.php");
-        }
-    }
+
+    
+    // function connect() {
+    //     if (isset($_POST['connect'])) {
+    //         session_start();
+    //         header("Location: ./View/board.php");
+    //     }
+    // }
 ?> 
