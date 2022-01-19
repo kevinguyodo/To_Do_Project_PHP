@@ -35,12 +35,12 @@
             </div>
             <h1 class="title">To-do-list</h1>
             <h2 class="desc">Bienvenue dans votre board</h2>
-            <form method="">
+            <form method="post">
                 <div class="form">
-                    <input class="but" type="text" name="u" placeholder="To-do..." required="required" />
+                    <input class="but" type="text" name="nameBoard" placeholder="To-do..." required="required" />
                 </div>
                 <div class="info">
-                    <button type="submit" class="btn btn-primary btn-block btn-large">Add</button>
+                    <button type="submit" name="createBoard" class="btn btn-primary btn-block btn-large">Add</button>
                 </div>
             </form>
         </div>
@@ -57,6 +57,7 @@
             
         </div>
     </div>
+    <?= creationBoard($username) ?>
     <?= disconnect() ?>
 </body>
 
