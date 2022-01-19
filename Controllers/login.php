@@ -51,6 +51,7 @@
         $q->execute(['Mail' => $lMail]);
         $result = $q->fetch();
 
+        // Création de session et d'un cookie
         $_SESSION['idUser'] = $result['User_Id'];
         $_SESSION['Username'] = $result['Username'];
         setcookie('sessionCookie', $result['Username'], time()+3600);
