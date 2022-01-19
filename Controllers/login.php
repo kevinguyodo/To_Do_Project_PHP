@@ -53,6 +53,7 @@
 
         $_SESSION['idUser'] = $result['User_Id'];
         $_SESSION['Username'] = $result['Username'];
+        setcookie('sessionCookie', $result['Username'], time()+3600);
     }
 
 
