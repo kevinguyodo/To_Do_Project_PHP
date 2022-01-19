@@ -53,33 +53,7 @@
             <h2>**TO DO #1**</h2>
             <div class="scroll">
                 <ul>
-                    <!-- Item start -->
-                    <li>
-                        <label>
-                            <input type="checkbox" name="">
-                            <p>todo</p>
-                            <span></span>
-                        </label>
-                    </li>
-                    <!-- Item End -->
-                    <!-- Item start -->
-                    <li>
-                        <label>
-                            <input type="checkbox" name="">
-                            <p>todo2</p>
-                            <span></span>
-                        </label>
-                    </li>
-                    <!-- Item End -->
-                    <!-- Item start -->
-                    <li>
-                        <label>
-                            <input type="checkbox" name="">
-                            <p>todo3</p>
-                            <span></span>
-                        </label>
-                    </li>
-                    <!-- Item End -->
+                    <?= getTasks($username) ?>
                 </ul>
             </div>
         </div>

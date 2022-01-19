@@ -6,14 +6,11 @@
 <?php 
     use App\Connection;
 
-
     function getBoards($username) {
         $db = (new Connection())->connect();
         $request = $db->prepare("SELECT * FROM Board_list INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
         $request->execute(['Username' => $username]);
         $result = $request->fetchAll();
-
-
 
         foreach ($result as $row) {
             $board = '
@@ -22,19 +19,12 @@
             </div>
             ';
             echo $board;
-            // $array[] = $row['column'];
         }
-
-        // for ($index = 1; $index <= getNumberBoard($username, $db); $index++) {
-        //     // echo $index." index , \n";
-        //     // echo $result[$index]. "Nombre d'éléments \n";
-        //     // echo $result['Name']. "\n";
-        //     // echo $result;
-        // }
-        
     }
 
+
     function getNumberBoard($username, $db) {
+        // On compte le nombre de Board d'un user afin de tous les afficher
         $request = $db->prepare("SELECT COUNT(Board_Id) AS numberBoard FROM Board_list INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
         $request->execute(['Username' => $username]);
         $result = $request->fetch();
@@ -43,19 +33,22 @@
 
     function creationBoard($username) {
         if (isset($_POST['createBoard'])) {
+            // On extrait les éléments de l'input
             extract($_POST);
             $db = (new Connection())->connect();
             $idUser = getIdUser($username, $db);
+            // Creation requête SQL
             $request = $db->prepare("INSERT INTO Board_list(Creator_Id_Fk, Contributor_Id ,Name) VALUES (:Creator_Id_Fk, :Contributor_Id, :Name)");
             $request->execute([
                 'Creator_Id_Fk' =>$idUser,
                 'Contributor_Id' => 0,
                 'Name' => $nameBoard,
             ]);  
+            createBoardURL($nameBoard);
+            // Refresh de la page pour l'affichage de la board créée
             header("Refresh:0; url=/Controllers/board.php");
             die;
         }
-
     }
 
     function getIdUser($username, $db) {
@@ -63,6 +56,17 @@
         $request->execute(['Username' => $username]);
         $result = $request->fetch();
         return $result['User_Id'];
+    }
+
+    function createBoardURL($boardName) {
+        $url = "/Controllers/task.php";
+        $paramURL = ['param' => $boardName];
+        $queryParams = http_build_query($paramURL);
+        if (strpos($url, '?') !== FALSE) {
+            $url .= '&'. $queryParams;
+        } else {
+            $url .= '?'. $queryParams;
+        }
     }
     
     function disconnect() {
@@ -74,33 +78,6 @@
         } 
     }
 
-    // class Board {
 
-    //     function __construct() {}
-
-    //     function getBoards($usernameSession) {
-    //         $db = (new Connection())->connect();
-    //         $request = $db->prepare("SELECT * FROM Board INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
-    //         $request->execute(['Username' => $usernameSession]);
-    //         $result = $q->fetch();
-    //         return $result['Name'];
-    //     }
-    // }
 
 ?>
-
-
-
-
-<!-- // function getUsername() {
-// $db = (new Connection())->connect();
-// $username= $db->prepare("SELECT Username FROM Users WHERE User_Id = ");
-// }
-
-// function connect() {
-// if (isset($_POST['connect'])) {
-// session_start();
-// header("Location: ./View/board.php");
-// }
-// } -->
-<!-- ?> -->
