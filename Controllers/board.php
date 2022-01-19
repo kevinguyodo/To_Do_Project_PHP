@@ -11,7 +11,13 @@
         $request = $db->prepare("SELECT * FROM Board_list INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
         $request->execute(['Username' => $username]);
         $result = $request->fetch();
-        echo $result['Name'];
+
+        $board = '
+        <div class="box a">
+            <h3>'. $result['Name'] .'</h3>
+        </div>
+        ';
+        echo $board;
     }
     
     function disconnect() {

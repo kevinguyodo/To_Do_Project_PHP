@@ -52,24 +52,9 @@
     </div>
     <div class="board">
         <div class="wrapper">
-            <div class="box a">
-                <h3><?= getBoards($username)?></h3>
-            </div>
-            <div class="box b">
-                <h3>Salut</h3>
-            </div>
-            <div class="box c">
-                <h3>Salut</h3>
-            </div>
-            <div class="box d">
-                <h3>Salut</h3>
-            </div>
-            <div class="box e">
-                <h3>Salut</h3>
-            </div>
-            <div class="box f">
-                <h3>Salut</h3>
-            </div>
+            
+            <?=getBoards($username)?>
+            
         </div>
     </div>
     <?= disconnect() ?>
