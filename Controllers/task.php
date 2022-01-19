@@ -37,9 +37,23 @@
         }
     }
 
-    // function backToBoardMenu() {
-    //     if (isset($_POST))
-    // }
-
+    function creationTask($username) {
+        if (isset($_POST['createTask'])) {
+            // On extrait les éléments de l'input
+            extract($_POST);
+            $db = (new Connection())->connect();
+            // Creation requête SQL
+            $request = $db->prepare("INSERT INTO Task(Board_Id_Fk, Task_Name) VALUES (:Board_Id_Fk, :Task_Name)");
+            $request->execute([
+                // Board_Id_Fk sera le parametre de l'URL 
+                // TO DO
+                'Board_Id_Fk' => 1,
+                'Task_Name' => $nameTask,
+            ]);  
+            // Refresh de la page pour l'affichage de la board créée
+            header("Refresh:0; url=/Controllers/task.php");
+            die;
+        }
+    }
 
 ?>

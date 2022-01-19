@@ -33,12 +33,12 @@
             </div>
             <h1 class="title">To-do-list</h1>
             <h2 class="desc">Task</h2>
-            <form method="">
+            <form method="post">
                 <div class="form">
-                    <input type="text" name="u" placeholder="To-do..." required="required" />
+                    <input type="text" name="nameTask" placeholder="To-do..." required="required" />
                 </div>
                 <div class="info">
-                    <button type="submit" class="btn btn-primary btn-block btn-large">Add</button>
+                    <button type="submit" name="createTask" class="btn btn-primary btn-block btn-large">Add</button>
                 </div>
             </form>
         </div>
@@ -58,6 +58,7 @@
             </div>
         </div>
     </div>
+    <?= creationTask($username) ?>
     <?= disconnect() ?>
 
 </body>
