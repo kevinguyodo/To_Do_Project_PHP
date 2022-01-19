@@ -1,13 +1,19 @@
-<?php 
-    require_once "../View/board.php";
-    require_once "../Models/Connection.php";
+<?php
+    require_once '../vendor/autoload.php';
+    require_once "../View/board.php"
 ?>
 
-<?php    
+<?php 
     use App\Connection;
 
-    $db;
-    // require "../View/board.php";
+    function getBoards($username) {
+        $db = (new Connection())->connect();
+        $request = $db->prepare("SELECT * FROM Board_list INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
+        $request->execute(['Username' => $username]);
+        $result = $request->fetch();
+        echo $result['Name'];
+    }
+    
     function disconnect() {
         // Récupère requête POST avec le nom du boutton
         if (isset($_POST['logout'])) {
@@ -17,14 +23,22 @@
         } 
     }
 
-    function connect() {
-        if (isset($_POST['connect'])) {
-            session_start();
-            header("Location: ./Controllers/board.php");
-            die();
-        }
-    }
+    // class Board {
+
+    //     function __construct() {}
+
+    //     function getBoards($usernameSession) {
+    //         $db = (new Connection())->connect();
+    //         $request = $db->prepare("SELECT * FROM Board INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
+    //         $request->execute(['Username' => $usernameSession]);
+    //         $result = $q->fetch();
+    //         return $result['Name'];
+    //     }
+    // }
+
 ?>
+
+
 
 
 <!-- // function getUsername() {

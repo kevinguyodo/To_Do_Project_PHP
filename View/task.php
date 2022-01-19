@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    $username = $_SESSION['Username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +19,7 @@
     <header>
         <div class="overlay">
             <div class="info_user">
-                <h3 class="name_user">**User**</h3>
+                <h3 class="name_user"><?php echo $username ?></h3>
                 <div class="icon">
                     <i class="fas fa-user fa-2x"></i>
                 </div>

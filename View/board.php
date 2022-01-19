@@ -53,7 +53,7 @@
     <div class="board">
         <div class="wrapper">
             <div class="box a">
-                <h3>Salut</h3>
+                <h3><?= getBoards($username)?></h3>
             </div>
             <div class="box b">
                 <h3>Salut</h3>
