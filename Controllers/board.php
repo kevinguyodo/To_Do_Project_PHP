@@ -6,6 +6,13 @@
 <?php 
     use App\Connection;
 
+    function backToMenu() {
+        if (!isset($_COOKIE['sessionCookie'])) {
+            header("Location: ../index.php");
+            die();
+        }
+    }
+
     function getBoards($username) {
         $db = (new Connection())->connect();
         $request = $db->prepare("SELECT * FROM Board_list INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
@@ -58,21 +65,26 @@
         return $result['User_Id'];
     }
 
-    function createBoardURL($boardName) {
-        $url = "/Controllers/task.php";
-        $paramURL = ['param' => $boardName];
-        $queryParams = http_build_query($paramURL);
-        if (strpos($url, '?') !== FALSE) {
-            $url .= '&'. $queryParams;
-        } else {
-            $url .= '?'. $queryParams;
-        }
-    }
+    // function createBoardURL($boardName) {
+    //     $url = "/Controllers/task.php";
+    //     $paramURL = ['param' => $boardName];
+    //     $queryParams = http_build_query($paramURL);
+    //     if (strpos($url, '?') !== FALSE) {
+    //         $url .= '&'. $queryParams;
+    //     } else {
+    //         $url .= '?'. $queryParams;
+    //     }
+    // }
     
     function disconnect() {
         // Récupère requête POST avec le nom du boutton
         if (isset($_POST['logout'])) {
+            $_SESSION = array();
             session_destroy();
+            if (isset($_COOKIE['sessionCookie'])) {
+                unset($_COOKIE['sessionCookie']);
+                setcookie('sessionCookie', '', time() - 3600); // empty value and old timestamp
+            }
             header("Location: ../index.php");
             die();
         } 

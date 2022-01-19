@@ -1,6 +1,7 @@
 <?php 
     session_start();
     $username = $_SESSION['Username'];
+    
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +61,7 @@
     </div>
     <?= creationTask($username) ?>
     <?= disconnect() ?>
+    <?= backToMenu() ?>
 
 </body>
 
