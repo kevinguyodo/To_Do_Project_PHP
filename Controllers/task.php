@@ -7,7 +7,7 @@
 <?php
     use App\Connection;
 
-
+    
     function getTasks($username) {
         $db = (new Connection())->connect();
         $request = $db->prepare("SELECT * FROM Task 
@@ -18,15 +18,34 @@
         $result = $request->fetchAll();
 
         foreach ($result as $row) {
-            $task = '
-            <li>
-                <label>
-                    <input type="checkbox" name="">
-                    <p>'. $row['Task_Name'] .'</p>
-                    <span></span>
-                </label>
-            </li>';
-            echo $task;
+            if ($row['Board_Id_Fk'] == $_GET['board']) {
+                $task = '
+                        <li>
+                            <label>
+                                <input type="checkbox" name="">
+                                    <p>'. $row['Task_Name'] .'</p>
+                                <span></span>
+                            </label>
+                        </li>';
+                    echo $task;
+            }
+        }
+    }
+
+    function getBoardName($username) {
+        $db = (new Connection())->connect();
+        $request = $db->prepare("SELECT * FROM Board_list  
+            INNER JOIN Users ON Users.User_Id = Board_list.Creator_Id_Fk
+            WHERE Username = :Username");
+        $request->execute(['Username' => $username]);
+        $result = $request->fetchAll();
+
+        foreach ($result as $row) {
+            if ($row['Board_Id'] == $_GET['board']) {
+                $task = '
+                <h2>'. $row['Name']. '</h2>';
+                echo $task;
+            }
         }
     }
 
@@ -40,11 +59,11 @@
             $request->execute([
                 // Board_Id_Fk sera le parametre de l'URL 
                 // TO DO
-                'Board_Id_Fk' => 1,
+                'Board_Id_Fk' => $_GET['board'],
                 'Task_Name' => $nameTask,
             ]);  
             // Refresh de la page pour l'affichage de la board créée
-            header("Refresh:0; url=/Controllers/task.php");
+            header('Refresh:0; url=/Controllers/task.php?board='. $_GET['board']);
             die;
         }
     }

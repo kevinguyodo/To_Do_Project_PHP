@@ -14,11 +14,12 @@
         $result = $request->fetchAll();
 
         foreach ($result as $row) {
-            $board = '
-            <div class="box a">
-                <h3>'. $row['Name'] .'</h3>
-            </div>
-            ';
+            $board = "
+            <a href=./task.php?board=" . $row['Board_Id'] . ">
+                <div class='box a'>
+                    <h3>". $row['Name'] ."</h3>
+                </div>
+            </a>";
             echo $board;
         }
     }
@@ -45,7 +46,6 @@
                 'Contributor_Id' => 0,
                 'Name' => $nameBoard,
             ]);  
-            createBoardURL($nameBoard);
             // Refresh de la page pour l'affichage de la board créée
             header("Refresh:0; url=/Controllers/board.php");
             die;
