@@ -45,16 +45,11 @@
             </form>
         </div>
     </header>
-    <div class="add">
-        <a href="/View/project_to_do_list.php">
-            <input type="image" src="../View/IMG/image_9.png" class="add_img" name="add_to_do">
-        </a>
-    </div>
     <div class="board">
         <div class="wrapper">
-            
+
             <?=getBoards($username)?>
-            
+
         </div>
     </div>
     <?= creationBoard($username) ?>
