@@ -52,7 +52,7 @@
     </div>
     <div class="display">
         <div class="list">
-            <h2>**TO DO #1**</h2>
+            <?= getBoardName($username) ?>
             <div class="scroll">
                 <form method="post">
                     <ul>
