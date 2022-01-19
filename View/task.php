@@ -1,4 +1,5 @@
 <?php 
+    require_once "./cookieSession.php";
     session_start();
     $username = $_SESSION['Username'];
     
@@ -53,9 +54,11 @@
         <div class="list">
             <h2>**TO DO #1**</h2>
             <div class="scroll">
-                <ul>
-                    <?= getTasks($username) ?>
-                </ul>
+                <form method="post">
+                    <ul>
+                        <?= getTasks($username) ?>
+                    </ul>
+                </form>
             </div>
         </div>
     </div>
