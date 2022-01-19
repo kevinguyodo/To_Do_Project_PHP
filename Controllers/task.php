@@ -1,17 +1,11 @@
 <?php
     require_once '../vendor/autoload.php';
     require_once "../View/task.php";
+    // require_once "./cookieSession.php";
 ?>
 
 <?php
     use App\Connection;
-
-    function backToMenu() {
-        if (!isset($_COOKIE['sessionCookie'])) {
-            header("Location: ../index.php");
-            die();
-        }
-    }
 
 
     function getTasks($username) {
@@ -53,20 +47,6 @@
             header("Refresh:0; url=/Controllers/task.php");
             die;
         }
-    }
-
-    function disconnect() {
-        // Récupère requête POST avec le nom du boutton
-        if (isset($_POST['logout'])) {
-            $_SESSION = array();
-            session_destroy();
-            if (isset($_COOKIE['sessionCookie'])) {
-                unset($_COOKIE['sessionCookie']);
-                setcookie('sessionCookie', '', time() - 3600); // empty value and old timestamp
-            }
-            header("Location: ../index.php");
-            die();
-        } 
     }
 
 ?>

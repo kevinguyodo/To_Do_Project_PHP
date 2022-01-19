@@ -1,4 +1,5 @@
 <?php 
+    require_once "./cookieSession.php";
     session_start();
 
     $username = $_SESSION['Username'];
