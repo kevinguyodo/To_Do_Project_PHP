@@ -23,7 +23,6 @@
         }
     }
 
-
     function getNumberBoard($username, $db) {
         // On compte le nombre de Board d'un user afin de tous les afficher
         $request = $db->prepare("SELECT COUNT(Board_Id) AS numberBoard FROM Board_list INNER JOIN Users ON Users.User_Id = Creator_Id_Fk WHERE Username = :Username");
@@ -57,17 +56,5 @@
         $request->execute(['Username' => $username]);
         $result = $request->fetch();
         return $result['User_Id'];
-    }
-
-    // function createBoardURL($boardName) {
-    //     $url = "/Controllers/task.php";
-    //     $paramURL = ['param' => $boardName];
-    //     $queryParams = http_build_query($paramURL);
-    //     if (strpos($url, '?') !== FALSE) {
-    //         $url .= '&'. $queryParams;
-    //     } else {
-    //         $url .= '?'. $queryParams;
-    //     }
-    // }
-    
+    }    
 ?>
