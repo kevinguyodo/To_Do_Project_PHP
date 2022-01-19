@@ -257,21 +257,6 @@ body {
     transform: rotate(-40deg);
 }
 
-.list ul li label input:checked~p {
-    text-decoration: line-through;
-    color: #ccc;
-}
-
-.list ul li label input:checked~span {
-    background: #03a9f4;
-    border: 1px solid #03a9f4;
-}
-
-.list ul li label input:checked~span::before {
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-}
-
 .form {
     display: flex;
     flex-direction: column;

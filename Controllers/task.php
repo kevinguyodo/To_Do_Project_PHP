@@ -21,15 +21,51 @@
             if ($row['Board_Id_Fk'] == $_GET['board']) {
                 $task = '
                         <li>
-                            <label>
+                            <label id="task">
                                 <input type="checkbox" name="">
                                     <p>'. $row['Task_Name'] .'</p>
+                                    <form method="post">
+                                        <button name="btnCheck">Check</button>
+                                    </form>
                                 <span></span>
                             </label>
                         </li>';
                     echo $task;
+                    checkTask($db, $row['Task_Id'], $row['Is_Done']);
             }
         }
+    }
+
+    function checkTask($db, $check, $isDone) {
+        if(isset($_POST['btnCheck']) && $isDone == 0){
+            $request = $db->prepare("UPDATE Task SET Is_Done = 1 WHERE Task_Id = :Task_Id");
+            $request->execute(['Task_Id' => $check]);
+        } else if (isset($_POST['btnCheck']) && $isDone == 1) {
+            $request = $db->prepare("UPDATE Task SET Is_Done = 0 WHERE Task_Id = :Task_Id");
+            $request->execute(['Task_Id' => $check]);
+        }
+        styleIsDoneTask($isDone);
+    }
+
+    function styleIsDoneTask($taskDone) {
+        if ($taskDone == 1) {
+            echo '<style type="text/css">
+                #task input:checked ~ p {
+                    text-decoration: line-through;
+                    color: #ccc;
+                }
+                
+                #task input:checked ~ span {
+                    background: #03a9f4;
+                    border: 1px solid #03a9f4;
+                }
+                
+                #task input:checked ~ span::before {
+                    border-left: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                }
+            </style>';            
+        } 
     }
 
     function getBoardName($username) {
