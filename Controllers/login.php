@@ -1,5 +1,4 @@
 <?php
-    // require('../Models/Connection.php');
     require_once '../vendor/autoload.php';
     require_once '../View/login.php';
 ?>

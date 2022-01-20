@@ -1,7 +1,6 @@
 <?php
     require_once '../vendor/autoload.php';
     require_once "../View/task.php";
-    // require_once "./cookieSession.php";
 ?>
 
 <?php
@@ -93,8 +92,6 @@
             // Creation requête SQL
             $request = $db->prepare("INSERT INTO Task(Board_Id_Fk, Task_Name) VALUES (:Board_Id_Fk, :Task_Name)");
             $request->execute([
-                // Board_Id_Fk sera le parametre de l'URL 
-                // TO DO
                 'Board_Id_Fk' => $_GET['board'],
                 'Task_Name' => $nameTask,
             ]);  

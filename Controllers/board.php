@@ -59,15 +59,5 @@
         return $result['User_Id'];
     }
 
-    // function createBoardURL($boardName) {
-    //     $url = "/Controllers/task.php";
-    //     $paramURL = ['param' => $boardName];
-    //     $queryParams = http_build_query($paramURL);
-    //     if (strpos($url, '?') !== FALSE) {
-    //         $url .= '&'. $queryParams;
-    //     } else {
-    //         $url .= '?'. $queryParams;
-    //     }
-    // }
     
 ?>

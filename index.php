@@ -1,6 +1,5 @@
 <?php
     ob_start();
-/*     require "./Controllers/board.php"; */
 ?>
 
 <div class="overlay">
